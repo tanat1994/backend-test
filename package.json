@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "ts-node-dev --respawn src/server/server.ts dotenv/config .env",
-    "db": "ts-node-dev --respawn src/services/db.service.ts dotenv/config .env"
+    "start:dev": "ts-node-dev --respawn src/server/server.ts dotenv/config .env"
   },
   "author": "",
   "license": "ISC",
