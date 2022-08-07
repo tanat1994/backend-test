@@ -18,6 +18,8 @@ export const isAuthor = async (req: Request<{ blogId: number }>, res: Response, 
     if (blog) {
         next();
     } else {
-        return res.status(403).send('Permission Denied');
+        return res.status(403).json({
+            message: "Permission denied",
+        });
     }
 }
