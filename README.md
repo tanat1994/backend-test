@@ -31,3 +31,6 @@ cd back-end
 docker compose up
 ```
 This will create the MSSQL instance with initial password from the docker-compose.yml file
+
+## Document
+https://docs.google.com/document/d/1NmrlJFzf-rooR3642KxEjO_bgzZRyeH6AkpWNKHhKrw/edit?usp=sharing
