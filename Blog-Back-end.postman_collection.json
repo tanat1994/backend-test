@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "df6866ef-e1fd-4da4-9251-bbb6e47fc777",
+		"name": "Blog Back-end",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "RegisterByUsername",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"myusername\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}:{{port}}/api/user/register",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"myusername\",\n\t\"password\": \"boQ3IV\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}:{{port}}/api/user/login",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Blog",
+			"item": [
+				{
+					"name": "ListAllBlog",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJ1c2VySWQiOjcsImlhdCI6MTY1OTg3NjA0MiwiZXhwIjoxNjU5ODc5NjQyfQ.oY7Z85b5egzzeNnLRbIUI41l8LCbAk-CkzSJPW7XQ9Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}:{{port}}/api/blog",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"blog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get BlogInfo by BlogID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJ1c2VySWQiOjcsImlhdCI6MTY1OTg3NjA0MiwiZXhwIjoxNjU5ODc5NjQyfQ.oY7Z85b5egzzeNnLRbIUI41l8LCbAk-CkzSJPW7XQ9Y"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}:{{port}}/api/blog/4",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"blog",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJ1c2VySWQiOjcsImlhdCI6MTY1OTg3NjA0MiwiZXhwIjoxNjU5ODc5NjQyfQ.oY7Z85b5egzzeNnLRbIUI41l8LCbAk-CkzSJPW7XQ9Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"testname2\",\n\t\"category\": \"Fashion\",\n\t\"content\": \"Lorem Ipsum\",\n\t\"status\": \"Open\",\n\t\"authorId\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}:{{port}}/api/blog",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"blog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Blog Only Author can edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJ1c2VySWQiOjcsImlhdCI6MTY1OTg3NjA0MiwiZXhwIjoxNjU5ODc5NjQyfQ.oY7Z85b5egzzeNnLRbIUI41l8LCbAk-CkzSJPW7XQ9Y"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"testname\",\n\t\"category\": \"Fashion\",\n\t\"content\": \"Lorem Ipsum\",\n\t\"status\": \"Open\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}:{{port}}/api/blog/{{blogId}}",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"blog",
+								"{{blogId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog Only Author can delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJ1c2VySWQiOjcsImlhdCI6MTY1OTg3NjA0MiwiZXhwIjoxNjU5ODc5NjQyfQ.oY7Z85b5egzzeNnLRbIUI41l8LCbAk-CkzSJPW7XQ9Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}:{{port}}/api/blog/{{blogId}}",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"blog",
+								"{{blogId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}:{{port}}/healthcheck",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
