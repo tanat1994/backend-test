@@ -1,0 +1,11 @@
+version: '1'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    volumes:
+      - ~/apps/mssql/data:/var/lib/mssqlql/data
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=MYDB!2022
+    ports:
+      - "1433:1433"
